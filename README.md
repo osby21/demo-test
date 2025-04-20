@@ -17,13 +17,13 @@ It features a clean user interface with functionalities like product listings pa
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/abbassiddiqi/shopping-store-vue.git
+    git clone https://github.com/osby21/demo-test.git
     ```
 
 2. Install dependencies:
 
     ```sh
-    cd shopping-store-vue
+    cd demo-test
     npm install
     ```
 
