@@ -1,101 +1,4 @@
-<!-- <template>
-    <div class="categories-slider-container mb-8">
-      <div class="flex overflow-x-auto pb-4 gap-4 px-2" ref="slider">
-        <button
-          @click="selectCategory(null)"
-          class="category-btn flex-shrink-0"
-          :class="{ 'active-category': !selectedCategory }"
-        >
-          Todos
-        </button>
-        <button
-          v-for="category in uniqueCategories"
-          :key="category"
-          @click="selectCategory(category)"
-          class="category-btn flex-shrink-0"
-          :class="{ 'active-category': selectedCategory === category }"
-        >
-          {{ category }}
-        </button>
-      </div>
-    </div>
-  </template>
-  
-  <script setup lang="ts">
-  import { ref, computed} from 'vue';
-  import { useProductsStore } from '@/stores/products';
-  import { storeToRefs } from 'pinia';
-  
-  const productsStore = useProductsStore();
-  const { products } = storeToRefs(productsStore);
-  const selectedCategory = ref<string | null>(null);
-  
-  const uniqueCategories = computed(() => {
-    const categories = new Set(
-      products.value.map(product => product.category)
-    );
-    return Array.from(categories);
-  });
-  
-    // Seleccionar categoría
-    const selectCategory = (category: string | null) => {
-    productsStore.setSelectedCategory(category);
-    };
-  </script>
-  
-  <style scoped>
-  .categories-slider-container {
-    position: relative;
-  }
-  
-  .categories-slider-container::-webkit-scrollbar {
-    height: 8px;
-  }
-  
-  .categories-slider-container::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-    border-radius: 4px;
-  }
-  
-  .categories-slider-container::-webkit-scrollbar-thumb {
-    background-color: #d1d1d1;
-    border-radius: 4px;
-  }
-  
-  .categories-slider-container::-webkit-scrollbar-thumb:hover {
-    background-color: #a1a1a1;
-  }
-  
-  .category-btn {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-    border-width: 1px;
-    border-color: #e5e7eb;
-    white-space: nowrap;
-  }
-  
-  .category-btn:hover {
-    border-color: #3b82f6;
-    background-color: rgba(59, 130, 246, 0.1);
-    color: #3b82f6;
-  }
-  
-  .active-category {
-    background-color: #3b82f6;
-    color: #ffffff;
-    border-color: #3b82f6;
-  }
-  </style> -->
-
-  <template>
+<template>
     <div class="categories-slider-container relative mb-8">
         <!-- Botón izquierdo -->
     <button
@@ -210,14 +113,6 @@
     });
     };
 
-    // const scroll = (amount: number) => {
-    // if (slider.value) {
-    //     slider.value.scrollBy({
-    //     left: amount,
-    //     behavior: 'smooth'
-    //     });
-    // }
-    // };
     const handleScroll = () => {
     if (slider.value) {
         const { scrollLeft, scrollWidth, clientWidth } = slider.value;
@@ -250,13 +145,9 @@
         "jewelery": "jewelery.svg",
         "electronics": "electronics.svg",
         "women's clothing": "women's clothing.svg",
-        // Otras categorías dinámicas pueden ser añadidas
+        
     };
-  
-//   const getCategoryImage = (category: string) => {
-//     return require(`@/assets/categories/${categoryImages[category] || 'default.jpg'}`);
-//   };
-  
+   
 const getCategoryImage = (category: string) => {
   const imageName = categoryImages[category] || 'default.png';
   return new URL(`/src/assets/categories/${imageName}`, import.meta.url).href;
