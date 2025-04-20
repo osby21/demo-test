@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: oklch(var(--b2));
+  z-index: -10;
+}
+
+/* Añade esto si usas clases personalizadas */
+@layer components {
+  .category-btn {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all 
+           border border-gray-300 hover:border-primary hover:bg-primary/10 
+           hover:text-primary dark:border-gray-600 dark:hover:border-primary
+           whitespace-nowrap;
+  }
+  
+  .active-category {
+    @apply bg-primary text-white border-primary hover:bg-primary 
+           hover:text-white dark:bg-primary dark:border-primary;
+  }
+}
