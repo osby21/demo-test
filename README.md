@@ -1,4 +1,4 @@
-# Shopping Store
+# Demo Test Shop
 
 An online shopping store built with Vue.js 3 using the composition API.
 
